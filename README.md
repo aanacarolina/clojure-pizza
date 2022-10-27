@@ -8,7 +8,7 @@ Clojure Bootcamp - Module 3 final project
 | Endpoint                   | HTTP        | Status Code | Description                      |
 | -------------------------- | ----------- |-----------  |----------------------------------| 
 | /order/:id                 | [get]       | 200 / 404   | Get order by id                  |
-| /order/delivery_address/   | [post]      | 200 / 404   | Get delivery address by order    |
+| /order/delivery_address/   | [post]      | 200 / 404   |                                  |
 | /order/status/:id          | [get]       | 200 / 404   | Get order status                 |
 | /order/                    | [get]       | 200 / 404   | Get all orders                   |
 | /order/:id                 | [put]       | 200 / 201   | Create/Update a order            |
