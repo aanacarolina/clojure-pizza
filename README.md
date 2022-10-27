@@ -12,7 +12,8 @@ Clojure Bootcamp - Module 3 final project
 | /order/:id  | [put]       | 200 / 201   |
 | /order/     | [delete]    | 202         |
 
-TODO 
+#TODO 
+```
 Criar schema
 Components
     server
@@ -21,7 +22,7 @@ Schema
     plumatic
 Testes
     with-derefs (mocks)    
-
+```
     
 ## Usage
 
