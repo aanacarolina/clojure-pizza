@@ -10,7 +10,8 @@ Clojure Bootcamp - Module 3 final project
 | /order/:id  | [get]       | 200 / 404   | 
 | /order/     | [get]       | 200 / 404   |
 | /order/:id  | [put]       | 200 / 201   |
-| /order/     | [delete]    | 202         |
+| /order/:id  | [delete]    | 202         |
+| /order/:id  | [delete]    | 202         | * NICE TO HAVE
 
 #TODO 
 ```
