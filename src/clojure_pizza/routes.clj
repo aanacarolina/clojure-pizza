@@ -1,5 +1,10 @@
-(ns clojure-pizza.routes)
+(ns clojure-pizza.routes
+    [io.pedestal.http.route :as route])
 
+
+(defn routes
+    ["user/:id/delivery_address/" :post new-address]
+)
 TODO
 - Ver readme
 

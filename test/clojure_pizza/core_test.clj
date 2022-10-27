@@ -6,6 +6,10 @@
   (testing "FIXME, I fail."
     (is (= 0 1))))
 
+(deftest new-address-test
+  (testing "."
+    (is (= 0 1))))
+
 TODO
 - Integração
 - Unitario
