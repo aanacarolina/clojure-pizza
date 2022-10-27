@@ -1,5 +1,6 @@
 (ns clojure-pizza.interceptors)
 
 TODO
-- status
+- incluir endereco apos pedido
+- status (so altera se tiver endereco cadastrado)
 - auth token
