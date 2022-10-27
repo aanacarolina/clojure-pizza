@@ -1,9 +1,9 @@
 (ns clojure-pizza.core
-  (:require [database as: db]))
+  #_(:require [database :as db]))
 
-(defn new-address
+(defn new-address-interceptor
   "creates a new address for a given user"
-  [user-id address]
-  ()
-  {:street :number :zip-code :city :suburb}
-  (println x "Hello, World!"))
+  [request]
+  ;;user-id address
+   ;{:street :number :zip-code :city :suburb}
+  #_(println x "Hello, World!"))
