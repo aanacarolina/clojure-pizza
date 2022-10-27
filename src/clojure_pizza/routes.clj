@@ -4,10 +4,10 @@ TODO
 - Ver readme
 
 
-/order/:id           | devolver o pedido pelo id 
-/delivery_address/   | cadastra um endereço de entrega e vincula ao pedido
-/status/:id          | devolve se EM PREPARO | EM ROTA | ENTREGUE
-/order/              | todos se nao passar id 
-/order/:id           | cria ou atualiza um pedido 
-/order/:id           | deleta um ou todos os pedidos
-/user/               | cria pessoa usuária
+/order/:id                    | devolver o pedido pelo id 
+/user/:id/delivery_address/   | cadastra um endereço extra de entrega e vincula ao usuario 
+/status/:id                   | devolve se EM PREPARO | EM ROTA | ENTREGUE
+/order/                       | todos se nao passar id 
+/order/:id                    | cria ou atualiza um pedido  (pode selecionar o endereco que quiser, se tiver mais do que 1)
+/order/:id                    | deleta um ou todos os pedidos
+/user/                        | cria pessoa usuária
