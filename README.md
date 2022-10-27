@@ -5,15 +5,15 @@ A Clojure API designed to create, get, update and delete orders from a pizzaria 
 
 Clojure Bootcamp - Module 3 final project
 
-| Endpoint    | Description | Status Code | 
-| ----------- | ----------- |-----------  | 
-| /order/:id  | [get]       | 200 / 404   | 
-| /address/   | [post]      | 200 / 404   | 
-| /status/:id | [get]       | 200 / 404   | 
-| /order/     | [get]       | 200 / 404   |
-| /order/:id  | [put]       | 200 / 201   |
-| /order/:id  | [delete]    | 202         |
-| /user/      | [put]       | 200 / 201   | * NICE TO HAVE
+| Endpoint             | Description | Status Code | 
+| ---------------      | ----------- |-----------  | 
+| /order/:id           | [get]       | 200 / 404   | 
+| /delivery_address/   | [post]      | 200 / 404   | 
+| /status/:id          | [get]       | 200 / 404   | 
+| /order/              | [get]       | 200 / 404   |
+| /order/:id           | [put]       | 200 / 201   |
+| /order/:id           | [delete]    | 202         |
+| /user/               | [put]       | 200 / 201   | * NICE TO HAVE
 
 #TODO 
 ```
