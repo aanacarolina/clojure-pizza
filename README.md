@@ -5,36 +5,44 @@ A Clojure API designed to create, get, update and delete orders from a pizzaria 
 
 Clojure Bootcamp - Module 3 final project
 
-| Endpoint                   | HTTP        | Status Code | Description                      |
-| -------------------------- | ----------- |-----------  |----------------------------------| 
-| /order/:id                 | [get]       | 200 / 404   | Get order by id                  |
-| /order/delivery_address/   | [post]      | 200 / 404   |                                  |
-| /order/status/:id          | [get]       | 200 / 404   | Get order status                 |
-| /order/                    | [get]       | 200 / 404   | Get all orders                   |
-| /order/:id                 | [put]       | 200 / 201   | Create/Update a order            |
-| /order/:id                 | [delete]    | 202         | Delete order                     |            
-| /order/:id                 | [patch]     | 200 / 201   | Update an order through N fields |
+| Endpoint                     | HTTP        | Status Code | Description                      |
+| --------------------------   | ----------- |-----------  |----------------------------------| 
+| /order/:id                   | [get]       | 200 / 404   | Get order by id                  |
+| /order/:id/delivery_address/ | [post]      | 200 / 404   | Get delivery address of client   |
+| /order/:id/status/           | [get]       | 200 / 404   | Get order status                 |
+| /order/                      | [get]       | 200 / 404   | Get all orders                   |
+| /order/:id                   | [put]       | 200 / 201   | Create/Update a order            |
+| /order/:id                   | [delete]    | 202         | Delete order                     |            
+| /order/:id                   | [patch]     | 200         | Update an order through N fields |
 
-#SCHEMA
+## Schemas
 
 **Order**
+```
 * id
 * price
 * delivery_address  
 * status
-* date 
+* date
+* qtd
+* pizza
+```
 
-#TODO 
+**Pizza**
 ```
-Criar schema
-Components
-    server
-    DB {mock} 
-Schema
-    plumatic
-Testes
-    with-derefs (mocks)    
+* size
+* ingredients
 ```
+
+## TODO 
+
+* Definir os componentes
+    * Server
+    * Database
+    * Config (PORT)
+* Criação dos schemas (prismatic)
+* Criação dos testes (with-derefs)    
+
     
 ## Usage
 
