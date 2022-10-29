@@ -1,9 +1,24 @@
 (ns clojure-pizza.core
-  #_(:require [database :as db]))
+  (:require [com.stuartsierra.component :as component]
+            [clojure-pizza.config :as config]
+            [clojure-pizza.routes :as routes]
+            [clojure-pizza.database :as database]
+            [clojure-pizza.server :as web-server]))
 
-(defn new-address-interceptor
-  "creates a new address for a given user"
-  [request]
-  ;;user-id address
-   ;{:street :number :zip-code :city :suburb}
-  #_(println x "Hello, World!"))
+(def new-sys
+  (component/system-map
+    :config (config/new-config)
+    :routes (routes/new-routes)
+    :database (component/using
+                (database/new-database)
+                [:config])
+    :web-server (component/using
+                  (web-server/new-server)
+                  [:database :routes :config])))
+
+(def sys (atom nil))
+(defn main [] (reset! sys (component/start new-sys)))
+
+(comment
+  (main)
+  (visualize-system new-sys))
