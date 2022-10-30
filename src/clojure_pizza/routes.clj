@@ -2,7 +2,8 @@
   (:require [io.pedestal.http.route :as route]
             [io.pedestal.interceptor :as i]
             [com.stuartsierra.component :as component]
-            [clojure-pizza.controller.user :as c.user]))
+            [clojure-pizza.controller.user :as c.user]
+            [clojure-pizza.controller.order :as c.order]))
 
 
 (def routes
@@ -11,7 +12,10 @@
                                 :enter c.user/hello}) :route-name :hello]
       ["/user" :post
        (i/interceptor {:name  :create-user
-                       :enter c.user/create-user!}) :route-name :create-user]}))
+                       :enter c.user/create-user!}) :route-name :create-user]
+      ["order/:id/status" :get
+       (i/interceptor {:name :status-order
+                       :enter c.order/status-order}) :route-name :status-order]}))
 
 (defrecord Routes []
   component/Lifecycle
