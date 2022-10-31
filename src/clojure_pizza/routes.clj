@@ -15,7 +15,10 @@
                        :enter c.user/create-user!}) :route-name :create-user]
       ["order/:id/status" :get
        (i/interceptor {:name :status-order
-                       :enter c.order/status-order}) :route-name :status-order]}))
+                       :enter c.order/status-order}) :route-name :status-order]
+      ["order/id/delivery-address" :post
+       (i/interceptor {:name :new-address
+                       :})]}))
 
 (defrecord Routes []
   component/Lifecycle
@@ -27,8 +30,6 @@
 (defn new-routes []
   (->Routes))
 
-;TODO
-;- Ver readme
 
 
 ;/order/:id                    | devolver o pedido pelo id
