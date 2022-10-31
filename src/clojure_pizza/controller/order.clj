@@ -14,6 +14,11 @@
         target-order (get orders-val id)]
     (get target-order :status)))
 
+(s/defn delete-order :- s.order/OrderAtom
+        [order :- s.order/OrderSchema
+         orders-atom :- s.order/OrderAtom]
+        (swap! orders-atom disj (:id order)))
+
 (s/defn orders :- [s.order/OrderSchema]
   [orders-atom :- s.order/OrderAtom]
   @orders-atom)
