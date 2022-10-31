@@ -13,6 +13,9 @@
       ["/user" :post
        (i/interceptor {:name  :create-user
                        :enter c.user/create-user!}) :route-name :create-user]
+      ["order/:id" :put
+       (i/interceptor {:name :create-update-order
+                       :enter c.order/create-order! }) :route-name :create-update-order]
       ["order/:id/status" :get
        (i/interceptor {:name :status-order
                        :enter c.order/status-order}) :route-name :status-order]
