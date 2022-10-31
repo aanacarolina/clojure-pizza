@@ -13,3 +13,7 @@
   (let [orders-val @orders-atom
         target-order (get orders-val id)]
     (get target-order :status)))
+
+(s/defn orders :- [s.order/OrderSchema]
+  [orders-atom :- s.order/OrderAtom]
+  @orders-atom)
