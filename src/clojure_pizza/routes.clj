@@ -19,6 +19,9 @@
       ["order/" :get
        (i/interceptor {:name :orders
                        :enter c.order/orders}) :route-name :status-order]}))
+      ["order/id/delivery-address" :post
+       (i/interceptor {:name :new-address
+                       :})]}))
 
 (defrecord Routes []
   component/Lifecycle
@@ -30,8 +33,6 @@
 (defn new-routes []
   (->Routes))
 
-;TODO
-;- Ver readme
 
 
 ;/order/:id                    | devolver o pedido pelo id

@@ -11,4 +11,4 @@
   (assoc context :response
                  {:status 200
                   :headers {"Content-Type" "text/html"}
-                  :body "Hello Friend!"}))
+                  :body "Hello Pizza Lover!"}))
