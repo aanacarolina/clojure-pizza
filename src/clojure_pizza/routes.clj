@@ -15,7 +15,10 @@
                        :enter c.user/create-user!}) :route-name :create-user]
       ["order/:id/status" :get
        (i/interceptor {:name :status-order
-                       :enter c.order/status-order}) :route-name :status-order]}))
+                       :enter c.order/status-order}) :route-name :status-order]
+      ["order/" :get
+       (i/interceptor {:name :orders
+                       :enter c.order/orders}) :route-name :status-order]}))
 
 (defrecord Routes []
   component/Lifecycle
