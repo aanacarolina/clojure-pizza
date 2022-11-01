@@ -16,9 +16,9 @@
       ["order/:id/status" :get
        (i/interceptor {:name :status-order
                        :enter c.order/status-order}) :route-name :status-order]
-      ["order/id/delivery-address" :post
+      ["order/:id/delivery-address" :post
        (i/interceptor {:name :new-address
-                       :})]}))
+                       :enter c.order/new-address}) :route-name :new-address]}))
 
 (defrecord Routes []
   component/Lifecycle

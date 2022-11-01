@@ -1,15 +1,13 @@
-(ns clojure-pizza.interceptors)
+(ns clojure-pizza.interceptors
+  (:require [io.pedestal.interceptor :as interceptor]))
 
-TODO
-- incluir endereco apos pedido
-- status (so altera se tiver endereco cadastrado)
-- auth token
+(def check-user-id
+  (interceptor/interceptor
+    {:name  ::check-user-id
+     :enter (fn [context]
+              (let [id (= (-> context :request :query-params :id))]
+                (if (= id nil))
+                    (assoc context :response {:status 404
+                                              :body "User not found."})
+              context))}))
 
-o /order/:id já retorna um user específico, você pode usar ele para retornar o da pessoa
-
-
-
-
-
-
-Só iria precisar de uma validação, para que uma pessoa não visualizasse o de outra
