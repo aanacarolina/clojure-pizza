@@ -5,9 +5,13 @@
             [clojure-pizza.database :as db]))
 
 (s/defn create-order! :- s.order/OrderAtom
-  [order :- s.order/OrderSchema
+  [order-id :- s/Uuid
+   order :- s.order/OrderSchema
    orders-atom :- s.order/OrderAtom]
-  (swap! orders-atom assoc (:id order) order))
+        (let [order-to-update (get @orders-atom order-id {:id order-id})
+              new-order (merge order-to-update order)
+              SIDE-EFFECT! (swap! orders-atom assoc order-id new-order)]
+          SIDE-EFFECT!))
 
 (s/defn status-order :- s/Str
   [id :- s/Uuid
@@ -25,3 +29,12 @@
                                     :suburb "Jokerville"
                                     :city "Gotham"
                                     :zip-code 010101})address))
+
+(s/defn delete-order :- s.order/OrderAtom
+        [order :- s.order/OrderSchema
+         orders-atom :- s.order/OrderAtom]
+        (swap! orders-atom disj (:id order)))
+
+(s/defn orders :- [s.order/OrderSchema]
+  [orders-atom :- s.order/OrderAtom]
+  @orders-atom)
