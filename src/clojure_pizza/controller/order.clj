@@ -3,9 +3,13 @@
             [clojure-pizza.schema.order :as s.order]))
 
 (s/defn create-order! :- s.order/OrderAtom
-  [order :- s.order/OrderSchema
+  [order-id :- s/Uuid
+   order :- s.order/OrderSchema
    orders-atom :- s.order/OrderAtom]
-  (swap! orders-atom assoc (:id order) order))
+        (let [order-to-update (get @orders-atom order-id {:id order-id})
+              new-order (merge order-to-update order)
+              SIDE-EFFECT! (swap! orders-atom assoc order-id new-order)]
+          SIDE-EFFECT!))
 
 (s/defn status-order :- s/Str
   [id :- s/Uuid
